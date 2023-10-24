@@ -1,0 +1,65 @@
+{%load static%}
+<html lang="en">
+<head>
+  <!-- Design by foolishdeveloper.com -->
+    <title>Signup Page</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="{%static 'css/login_index.css'%}">
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <div class="container">
+      <div class="title">
+        <h1>Welcome to Grad<span>Hunt</span></h1>
+      </div>
+      <div class="message_tag">
+        <span>Connect with friends and the world around you. Log in to your account to stay updated, share photos and videos, and engage with your social circle.</span>
+      </div>
+      
+    </div>
+    <form method="post" action>
+        {% csrf_token %}  
+        <h3>GradHunt - Signup</h3>
+
+        <label for="username">Username</label>
+        <input type="text" placeholder="Username" name="username" id="username">
+        <div class="columns">
+            <input type="text" placeholder = "First Name" name = "firstname">
+            <input type="text" placeholder = "Last Name" name = "lastname">
+        </div>
+        <label for="email">Email</label>
+        <input type="email" placeholder="Email" name="email" id="email">
+        <label for="contact">Contact</label>
+        <input type="text" placeholder="Phone Number" name="contact" id="contact">
+        <div class="columns">
+            <select class="select" name="gender">
+                <option value="">Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+              <select class="select" name="speciality">
+                <option value="">Speciality</option>
+                <option value="ict">ICT</option>
+                <option value="bms">BMS</option>
+              </select>
+        </div>
+        <label for="password1">Password</label>
+        <input type="password" placeholder="Password" id="password1" name="password1">
+
+        <label for="password2">Confirm Password</label>
+        <input type="password" placeholder="Confirm Password" id="password2" name="password2">
+        <button type="submit" href>Signup</button>
+        
+    <div class="redirect">
+        <label>Already have an account?</label>
+        <a href="{%url 'user_auth:login'%}"> Login</a>
+    </div>
+
+    </form>
+</body>
+<script src="{%static 'js/password_verification.js'%}"></script>
+</html>

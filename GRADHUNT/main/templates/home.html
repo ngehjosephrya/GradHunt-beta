@@ -1,0 +1,136 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GradHunt | Exclusive Social App for Students</title>
+    
+    <link rel="stylesheet" href="{%static 'css/navigation.css'%}" />
+    <!----===== Boxicons CSS ===== -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <h1 class="desktop-view">GRAD<span class="desktop-view">HUNT</span></h1>
+        <h1 class="mobile-view">G<span class="mobile-view">H</span></h1>
+      </div>
+      <div class="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <!-- Search Bar -->
+      <div class="search">
+        <input type="text" placeholder="Search Here..." />
+        <button class="btn"><i class="bx bx-search-alt-2"></i></button>
+      </div>
+      <!-- Navigation -->
+      <nav class="nav-bar">
+        <ul>
+          <div class="search">
+            <input type="text" placeholder="Search Here..." />
+            <button class="btn"><i class="bx bx-search-alt-2"></i></button>
+          </div>
+          <li class="nav-link"><a href="">Home</a></li>
+          <li class="nav-link"><a href="">Notifications</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="container_sections">
+      <section class="left_section">
+        <div class="menu">
+          <ul>
+            <li>
+              <a href="{% url 'BlogPost:blogpost' %}"><i class="bx bxl-blogger"></i>Blogs</a>
+            </li>
+            <li>
+              <a href=""><i class="bx bx-bookmarks"></i>Bookmarks</a>
+            </li>
+            <li>
+              <a href=""><i class="bx bx-calendar-event"></i>Events</a>
+            </li>
+            <li>
+              <a href=""><i class="bx bx-chat"></i>Instant Messaging</a>
+            </li>
+            <li>
+              <a href=""><i class="bx bx-bell"></i>Notifications</a>
+            </li>
+            <li>
+              <a href=""><i class="bx bx-briefcase-alt"></i>Job Search</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="middle_section">Hey</section>
+      <section class="right_section">
+        <div class="menu">
+          <div class="profile_img">
+            <img src="{{request.user.student.image.url}}" alt="" />
+            <span>{{request.user.student.last_name}}</span>
+          </div>
+          <ul>
+            <li>
+              <a href=""><i class="fa-solid fa-gear fa-spin"></i>Settings</a>
+            </li>
+            <li>
+              <a href=""><i class="bx bxl-mailchimp"></i>Send us Feedback</a>
+            </li>
+            <li>
+              <a href="{%url 'main:logout'%}"
+                ><i class="bx bx-log-out"></i>Logout</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="menu">
+          <div class="topic">
+            <span>Recent Activities</span>
+          </div>
+          <ul>
+            <li>
+              <a href=""><i class="fa-solid fa-gear fa-spin"></i>Settings</a>
+            </li>
+            <li>
+              <a href=""><i class="bx bxl-mailchimp"></i>Send us Feedback</a>
+            </li>
+            <li>
+              <a href=""><i class="bx bx-log-out"></i>Logout</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="menu online_friends">
+          <div class="topic">
+            <span>Online Friends</span>
+          </div>
+          <ul class="online_friends">
+            <li>
+              <img src="{% static 'default.jpg' %}" alt="" />
+              <a>Donald Misaki</a>
+            </li>
+            <li>
+              <img src="{% static 'default.jpg' %}" alt="" />
+              <a>Donald Misaki</a>
+            </li>
+            <li>
+              <img src="{% static 'default.jpg' %}" alt="" />
+              <a>Donald Misaki</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </body>
+  <script src="js/navigation.js"></script>
+</html>

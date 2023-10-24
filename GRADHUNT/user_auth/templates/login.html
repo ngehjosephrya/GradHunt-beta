@@ -1,0 +1,36 @@
+{%load static%}
+<html lang="en">
+<head>
+  <!-- Design by foolishdeveloper.com -->
+    <title>Login Page</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="{%static 'css/login.css'%}">
+</head>
+
+
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form method="Post">
+        {% csrf_token %}  
+            <h3>GradHunt - Login</h3>
+        
+        <input type="text" placeholder="Username" name="username" id="username">
+        
+        <input type="password" placeholder="Password" id="password" name="password1">
+
+        <a href="{%url 'user_auth:forgot_password'%}">Forgot password?</a>
+
+        <button type="submit">Login</button>
+        
+    <div class="redirect">
+        <label>Not yet a member?</label>
+        <a href="{%url 'user_auth:registration'%}">Signup</a>
+    </div>
+
+    </form>
+</body>
+</html>
